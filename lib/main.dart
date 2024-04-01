@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'models/note_model.dart';
 import 'services/note_service.dart';
+import 'data/note_repository.dart';
 
 void main() => runApp(const MyApp());
 
@@ -24,7 +25,7 @@ class NoteListScreen extends StatefulWidget {
 }
 
 class _NoteListScreenState extends State<NoteListScreen> {
-  final NoteService _noteService = NoteService();
+  final NoteService _noteService = NoteService(NoteRepository());
   late List<Note> _notes;
   bool _isLoading = true;
 

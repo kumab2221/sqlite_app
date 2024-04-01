@@ -1,8 +1,9 @@
-import '../data/note_repository.dart';
 import '../models/note_model.dart';
+import '../interfaces/i_note_repository.dart';
 
 class NoteService {
-  final NoteRepository _noteRepository = NoteRepository();
+  final INoteRepository _noteRepository;
+  NoteService(this._noteRepository);
 
   // メモの一覧を取得
   Future<List<Note>> fetchNotes() async {
